@@ -1,23 +1,28 @@
 import MessageList from './components/ComponentMessage/MessageList/MessageList';
-// import { useState } from 'react';
+
 import  Message  from './components/ComponentMessage/Message';
 import Form from './components/form/form';
-//import { useState } from 'react';
+import List from './components/List/list';
+import { useState } from 'react';
+//import ArrRender from './components/ArrRender/ArrRender';
+
 
 
 
 
 const messageComponentText = "переданный текст";
-const messageUp = MessageList;
+//const messageUp = MessageList;
 function App() {
-  
+ const [listArr, setListArr]= useState([]);
   return (
     <>
     <div className="App">
      <Message text={messageComponentText}/> 
     
-    <MessageList enterMessage={messageUp}/>
-    <Form />
+    <MessageList enterMessage={listArr}/>
+    <List tasksList={listArr}/>
+    <Form onChange={setListArr}/>
+    
    </div>
     </>
 

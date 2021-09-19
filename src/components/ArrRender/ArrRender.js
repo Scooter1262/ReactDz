@@ -1,13 +1,13 @@
 
 
-const ArrRender = ({arrList})=>{
-  // render() {  
-//     return (
-//         <View>
-//             {list.map(this.renderItem)}
-//         </View>
-//     )  
-// }
+const ArrRender = ({messageUp})=>{
+return(
+  <ul>
+     {messageUp.map((str)=>(
+       <li>{str}</li>
+     ))}
+  </ul>
+)
 }
 
 

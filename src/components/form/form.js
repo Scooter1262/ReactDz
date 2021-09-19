@@ -1,18 +1,19 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import MessageList from "../ComponentMessage/MessageList/MessageList";
 
 
 
 
-const Form = () => {
-    const[taskArr, setTaskArr]= useState([]);
+const Form = ({onChange}) => {
+    
     const [nameInput, setNameInput] = useState("author:");
     const [textInput, setTextInput] = useState("message:");
 
     const submit =(e)=>{
         e.preventDefault();
        console.log(nameInput, textInput) 
-        setTaskArr((prevValue)=>[...prevValue,nameInput ,textInput ]);
+       onChange(prev =>[...prev, {text:textInput, status:false}]);
+       onChange(prev =>[...prev, {text:nameInput, status:false}]);
          setTextInput('message:');
          setNameInput('author:');
     }
@@ -23,18 +24,16 @@ const Form = () => {
            message: <input value={textInput} onChange={(e) => setTextInput(e.target.value)} />
             <button onClick={submit}>Submit</button>
         </form>
-         <ul>
-             {taskArr.length ? taskArr.map((el)=>
-             <li key={el}>{el}</li>
-             ):null}
-         </ul>
+        
         </div>
     );
 
 };
-export default Form;
+export default memo(Form);
 
+// const useEffect = (submit)=>{
 
+// }
 
 
 
