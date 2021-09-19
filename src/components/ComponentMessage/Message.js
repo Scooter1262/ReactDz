@@ -3,7 +3,7 @@ import './style.css';
 const Message = ({text}) => { 
       
         return (
-            <div class = "message">{text}</div>
+            <div className = "message">{text}</div>
           
    
        )

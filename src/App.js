@@ -1,21 +1,23 @@
 import MessageList from './components/ComponentMessage/MessageList/MessageList';
 // import { useState } from 'react';
 import  Message  from './components/ComponentMessage/Message';
+import Form from './components/form/form';
 //import { useState } from 'react';
 
 
 
 
 const messageComponentText = "переданный текст";
-
+const messageUp = MessageList;
 function App() {
   
   return (
     <>
-    <div class="App">
+    <div className="App">
      <Message text={messageComponentText}/> 
     
-    <MessageList />
+    <MessageList enterMessage={messageUp}/>
+    <Form />
    </div>
     </>
 

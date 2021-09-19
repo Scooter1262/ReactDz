@@ -1,14 +1,38 @@
-//import React, { useState } from 'react';
+import { useState } from "react";
 
 
-const MessageList=()=>{
-    const arrList=[{author: 'alex', text : '1й'},{author: 'afg', text : '2й'},{author: 'afg', text : '3й'}];
-    console.log(arrList,"список");
-    return arrList.map((arrList)=>
-    <div>{MessageList}</div>
+export function MessageList(){
+   
+     const[strings, setStrings] = useState([]);
+     console.log("добавление в массив",strings);
 
-
-
+     const enterMessage = (el) =>{ 
+        //  el.push(setStrings);
+         setStrings(prevState =>[...prevState, el])
+        
+         
+     }
+    return strings.map((string)=> 
+         <>
+       
+        <span onClick={() => enterMessage(string)}>{enterMessage}</span>
+       </>
     )
-}
+    }
+
 export default MessageList;
+
+
+// const Form=()=>{
+//     const[textInput,setTextInput] = useState("");
+//     return(
+//         <form>
+//             <input value={textInput} onChange={(e)=>setTextInput(e.target.value)} />
+//             <button onClick={submith}>Submit</button>
+//         </form>
+//     );
+
+// };
+// export default Form;
+
+
