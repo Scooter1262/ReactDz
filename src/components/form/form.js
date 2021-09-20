@@ -12,8 +12,8 @@ const Form = ({onChange}) => {
     const submit =(e)=>{
         e.preventDefault();
        console.log(nameInput, textInput) 
-       onChange(prev =>[...prev, {text:textInput, status:false}]);
-       onChange(prev =>[...prev, {text:nameInput, status:false}]);
+       onChange(prev =>[...prev, {message:textInput, author:nameInput,}]);
+       //onChange(prev =>[...prev, {text:nameInput, status:false}]);
          setTextInput('message:');
          setNameInput('author:');
     }
