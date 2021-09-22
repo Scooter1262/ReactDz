@@ -1,4 +1,4 @@
-import { useState, memo } from "react";
+import { useState, memo,useEffect } from "react";
 import MessageList from "../ComponentMessage/MessageList/MessageList";
 
 
@@ -17,14 +17,22 @@ const Form = ({onChange}) => {
          setTextInput('message:');
          setNameInput('author:');
     }
+
+
+       useEffect(()=>{
+           console.log(nameInput);
+         },[nameInput]);
+
+ 
     return(
-        <div>
+        <div> 
+            
         <form onSubmit={MessageList}>
            author: <input value={nameInput} onChange={(e) => setNameInput(e.target.value)}/>
            message: <input value={textInput} onChange={(e) => setTextInput(e.target.value)} />
             <button onClick={submit}>Submit</button>
         </form>
-        
+        <p>Ваш запрос<p>{nameInput}</p> обрабатывается</p>
         </div>
     );
 

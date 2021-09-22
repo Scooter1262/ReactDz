@@ -5,16 +5,17 @@ export function MessageList(){
    
      const[strings, setStrings] = useState([]);
      console.log("добавление в массив",strings);
-
+      
      const enterMessage = (el) =>{ 
-        //  el.push(setStrings);
+      
          setStrings(prevState =>[...prevState, el])
         
          
      }
+    
     return strings.map((string)=> 
          <>
-       
+      
         <span onClick={() => enterMessage(string)}>{enterMessage}</span>
        </>
     )
