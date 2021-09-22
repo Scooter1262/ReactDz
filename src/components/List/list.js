@@ -2,7 +2,8 @@ const List=({tasksList})=>{
 return(
      <ul>
 {tasksList.length ? tasksList.map((el)=>
-             <li key={el.text}>{el.text}</li>
+             <li key={el.author}>{el.author}<br />
+             {el.message}</li>
              ):null}
          </ul>
 )

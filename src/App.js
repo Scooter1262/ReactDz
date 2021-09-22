@@ -10,18 +10,22 @@ import { useState } from 'react';
 
 
 
+
 const messageComponentText = "переданный текст";
 //const messageUp = MessageList;
 function App() {
+  const handlerChargeArr = (newObj)=>{
+    setListArr(prev=>[...prev,newObj])
+  }
  const [listArr, setListArr]= useState([]);
   return (
     <>
     <div className="App">
      <Message text={messageComponentText}/> 
-    
+   
     <MessageList enterMessage={listArr}/>
     <List tasksList={listArr}/>
-    <Form onChange={setListArr}/>
+    <Form onChange={handlerChargeArr}/>
     
    </div>
     </>
